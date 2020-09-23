@@ -13,7 +13,7 @@ lazy val root = (project in file("."))
 
 val res = Seq(
   Resolver.jcenterRepo,
-  Resolver.bintrayRepo("maif-functional-json", "maven")
+  Resolver.bintrayRepo("maif-functional-java", "maven")
 )
 
 libraryDependencies ++= Seq(
@@ -74,7 +74,7 @@ lazy val publishCommonsSettings = Seq(
   publishArtifact in Test := false,
   bintrayVcsUrl := Some(s"scm:git:git@github.com:$githubRepo.git"),
   resolvers ++= res,
-  bintrayOrganization := Some("maif-functional-validation"),
+  bintrayOrganization := Some("maif-functional-java"),
   bintrayRepository := "maven",
   pomIncludeRepository := { _ => false }
 )
