@@ -15,15 +15,15 @@ This lib provide helpers to validate bean and compose validations stacking error
 ```xml
 <dependency>
     <groupId>fr.maif</groupId>
-    <artifactId>functional-json</artifactId>
-    <version>1.0.0-BETA2</version>
+    <artifactId>functional-validation</artifactId>
+    <version>1.0.0-BETA1</version>
 </dependency>
 ```
 
 ### Gradle
 
 ```
-implementation 'fr.maif:functional-json:1.0.0-BETA2'
+implementation 'fr.maif:functional-validation:1.0.0-BETA1'
 ```
 
 ## Combining validations  
