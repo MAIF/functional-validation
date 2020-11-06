@@ -10,6 +10,8 @@ This lib provide helpers to validate bean and compose validations stacking error
 
 ## Imports
 
+Jcenter hosts this library.
+
 ### Maven
 
 ```xml
@@ -91,7 +93,7 @@ public static class VikingValidation {
 
     // Or with combine instead of and 
     public static Rule<String> validateViking2(Viking viking) {
-        return Rule.combine(List(
+        return Rule.combine(List.of(
                     notNull(viking.email).andThen(() -> validateEmail(viking.email)),
                     notNull(viking.website).andThen(() -> validateWebsite(viking.website)),
                     validateAge(viking.age)
