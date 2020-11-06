@@ -1,4 +1,9 @@
-# Functional Validation 
+# Functional Validation  [![travis-badge][]][travis] [![jar-badge][]][jar]
+                        
+[travis]:               https://travis-ci.org/MAIF/functional-validation
+[travis-badge]:         https://travis-ci.org/MAIF/functional-validation.svg?branch=master
+[jar]:                  https://bintray.com/maif-functional-java/maven/functional-validation/_latestVersion
+[jar-badge]:            https://api.bintray.com/packages/maif-functional-java/maven/functional-validation/images/download.svg
 
 
 This lib provide helpers to validate bean and compose validations stacking errors.  
