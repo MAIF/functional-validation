@@ -32,21 +32,22 @@ implementation 'fr.maif:functional-validation:1.0.0-BETA1'
 
 
 ```java
-public static class Viking {
+public class Viking {
 
     String name;
     String email;
     String website;
     Integer age;
 
-    public Viking(String name, String email, Integer age) {
+    public Viking(String name, String email, String website, Integer age) {
         this.name = name;
         this.email = email;
+        this.website = website;
         this.age = age;
     }
 }
 
-public static class VikingValidation {
+public class VikingValidation {
 
     public static final String EMAIL_PATTERN = "...";
     public static final String WEBSITE_URL_PATTERN = "...";
@@ -113,14 +114,14 @@ Rule<String> validation = VikingValidation.validateViking(new Viking(
         20
 ));
 
-println(validation.isValid()); // true
-println(validation.isInvalid()); // false
-println(validation.getErrors()); // empty
+System.out.println(validation.isValid()); // true
+System.out.println(validation.isInvalid()); // false
+System.out.println(validation.getErrors()); // empty
 String foldOk = validation.fold(
         errors -> "Validation failed with " + errors.mkString(", "),
         () -> "Validation succeed"
 );
-println(foldOk);// "Validation succeed"
+System.out.println(foldOk);// "Validation succeed"
 
 Rule<String> validationOnError = VikingValidation.validateViking(new Viking(
         "Ragnard",
@@ -129,15 +130,15 @@ Rule<String> validationOnError = VikingValidation.validateViking(new Viking(
         150
 ));
 
-println(validationOnError.isValid()); // false
-println(validationOnError.isInvalid()); // true
-println(validationOnError.getErrors()); // ["Email invalid", "Website invalid", "Age should be between 0 and 130"]
+System.out.println(validationOnError.isValid()); // false
+System.out.println(validationOnError.isInvalid()); // true
+System.out.println(validationOnError.getErrors()); // ["Email invalid", "Website invalid", "Age should be between 0 and 130"]
 String foldKo = validationOnError.fold(
         errors -> "Validation failed with " + errors.mkString(", "),
         () -> "Validation succeed"
 ); // "Validation failed with Email invalid, Website invalid, Age should be between 0 and 130"
 
-println(foldKo); // "Validation failed with Email invalid, Website invalid, Age should be between 0 and 130"
+System.out.println(foldKo); // "Validation failed with Email invalid, Website invalid, Age should be between 0 and 130"
 ```
 
 
@@ -188,8 +189,7 @@ Rule<String> and = validationWithStringError.and(otherRule);
 
 Sometime, validation is done using an external system where the call end with a future. 
 
-```java 
-
+```java
 String name = "Ragnard";
 
 Viking viking = new Viking(
