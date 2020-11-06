@@ -8,11 +8,28 @@
 
 This lib provide helpers to validate bean and compose validations stacking errors.  
 
+## Imports
+
+### Maven
+
+```xml
+<dependency>
+    <groupId>fr.maif</groupId>
+    <artifactId>functional-json</artifactId>
+    <version>1.0.0-BETA2</version>
+</dependency>
+```
+
+### Gradle
+
+```
+implementation 'fr.maif:functional-json:1.0.0-BETA2'
+```
+
 ## Combining validations  
 
 
-```java 
-
+```java
 public static class Viking {
 
     String name;
