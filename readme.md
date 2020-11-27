@@ -6,11 +6,11 @@
 [jar-badge]:            https://api.bintray.com/packages/maif-functional-java/maven/functional-validation/images/download.svg
 
 
-This lib provide helpers to validate bean and compose validations stacking errors.  
+This lib provides helpers to validate bean and compose validations stacking errors.  
 
 ## Imports
 
-Jcenter hosts this library.
+`Jcenter` hosts this library.
 
 ### Maven
 
@@ -104,7 +104,7 @@ public class VikingValidation {
 
 ```
 
-And then 
+And then :
 
 ```java
 Rule<String> validation = VikingValidation.validateViking(new Viking(
@@ -144,7 +144,7 @@ System.out.println(foldKo); // "Validation failed with Email invalid, Website in
 
 ## Bean validation 
 
-Bean validation can be used and mix with rules 
+You can mix rules from **Bean Validation** and **Functionnal Valdation** :
 
 ```java
 
@@ -169,7 +169,7 @@ public class Viking {
 
 ```
 
-and then 
+and then :
 
 ```java
 
@@ -187,7 +187,7 @@ Rule<String> and = validationWithStringError.and(otherRule);
 
 ## Async validation 
 
-Sometime, validation is done using an external system where the call end with a future. 
+Sometimes, you'll need async validation (for example when you call an external system) when the call returns a future. 
 
 ```java
 String name = "Ragnard";
