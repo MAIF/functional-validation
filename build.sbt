@@ -90,7 +90,6 @@ inThisBuild(
       )
     ),
     releaseCrossBuild := true,
-    publishMavenStyle := true,
     publishArtifact in Test := false
   )
 )
