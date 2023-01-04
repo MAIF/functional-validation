@@ -1,4 +1,4 @@
-name: Release Jooq async
+name: Release Functional Validation
 on:
   workflow_dispatch:
     inputs:
