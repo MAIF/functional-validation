@@ -7,9 +7,9 @@ import io.vavr.collection.List;
 import io.vavr.collection.Seq;
 import io.vavr.concurrent.Future;
 import io.vavr.control.Either;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validator;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
 import java.util.Objects;
 import java.util.Set;
 import java.util.StringJoiner;
@@ -30,7 +30,7 @@ public interface Rule<E> {
     Rule<?> VALID = new Valid<>();
 
     Lazy<Validator> validator = Lazy.of(() ->
-            javax.validation.Validation.buildDefaultValidatorFactory().usingContext()
+            jakarta.validation.Validation.buildDefaultValidatorFactory().usingContext()
                     .addValueExtractor(new SeqExtractor())
                     .addValueExtractor(new OptionExtractor())
                     .getValidator()

@@ -2,8 +2,8 @@ package fr.maif.validations;
 
 import io.vavr.control.Option;
 
-import javax.validation.valueextraction.ExtractedValue;
-import javax.validation.valueextraction.ValueExtractor;
+import jakarta.validation.valueextraction.ExtractedValue;
+import jakarta.validation.valueextraction.ValueExtractor;
 
 public class OptionExtractor implements ValueExtractor<Option<@ExtractedValue ?>> {
 

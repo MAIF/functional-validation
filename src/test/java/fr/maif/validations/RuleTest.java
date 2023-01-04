@@ -2,26 +2,19 @@ package fr.maif.validations;
 
 import io.vavr.collection.List;
 import io.vavr.control.Option;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-
-import javax.validation.ConstraintViolation;
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
-import javax.xml.transform.Source;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import org.junit.jupiter.api.Test;
 
 import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.StringJoiner;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CompletionStage;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@RunWith(JUnit4.class)
 public class RuleTest {
 
 

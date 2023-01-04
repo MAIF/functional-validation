@@ -1,18 +1,19 @@
 package fr.maif.validations;
 
 import io.vavr.concurrent.Future;
-import org.junit.Test;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import org.junit.jupiter.api.Test;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
 import java.util.regex.Pattern;
 
-import static fr.maif.validations.Examples.VikingValidation.EMAIL_PATTERN;
 import static fr.maif.validations.Examples.VikingValidation.WEBSITE_URL_PATTERN;
-import static io.vavr.API.*;
+import static io.vavr.API.Future;
+import static io.vavr.API.List;
+import static io.vavr.API.println;
 
 public class Examples {
 
@@ -21,7 +22,7 @@ public class Examples {
         public final String name;
         @Email
         public final String email;
-        @javax.validation.constraints.Pattern(regexp = WEBSITE_URL_PATTERN)
+        @jakarta.validation.constraints.Pattern(regexp = WEBSITE_URL_PATTERN)
         public final String website;
         @Min(0)
         @Max(130)
